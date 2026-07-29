@@ -1,0 +1,8 @@
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7fa;color:#333}
+header,footer{background:#0B5E8E;color:#fff;padding:20px;text-align:center}
+.container{max-width:1100px;margin:auto;padding:30px}
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+img{max-width:100%;border-radius:8px}
+nav a,footer a{color:#fff;margin:0 10px;text-decoration:none}
+.btn{background:#0B5E8E;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none;display:inline-block}
