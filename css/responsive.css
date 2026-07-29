@@ -1,0 +1,364 @@
+/* ==========================================================
+   CFDI Verifier
+   responsive.css
+========================================================== */
+
+/* ==========================================================
+LAPTOPS
+========================================================== */
+
+@media (max-width:1200px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+}
+
+/* ==========================================================
+TABLETS
+========================================================== */
+
+@media (max-width:992px){
+
+    nav{
+
+        display:none;
+
+    }
+
+    .menuButton{
+
+        display:block;
+
+    }
+
+    .heroGrid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .heroImage{
+
+        order:-1;
+
+    }
+
+    .heroImage img{
+
+        max-width:520px;
+
+        margin:auto;
+
+    }
+
+    .heroButtons{
+
+        justify-content:center;
+
+    }
+
+    .section{
+
+        padding:70px 0;
+
+    }
+
+    .sectionTitle h2{
+
+        font-size:2rem;
+
+    }
+
+    .footerGrid{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:50px;
+
+    }
+
+}
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .hero{
+
+        padding:60px 0;
+
+    }
+
+    .hero h1{
+
+        font-size:2.35rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .tag{
+
+        font-size:.8rem;
+
+    }
+
+    .sectionTitle h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .featureCard,
+    .securityCard,
+    .step{
+
+        padding:28px;
+
+    }
+
+    .galleryGrid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .heroButtons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .primaryButton,
+    .secondaryButton{
+
+        width:100%;
+
+        text-align:center;
+
+        max-width:320px;
+
+    }
+
+    .footerGrid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footerLogo{
+
+        margin:auto auto 20px;
+
+    }
+
+    .faq summary{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* ==========================================================
+SMALL PHONES
+========================================================== */
+
+@media (max-width:576px){
+
+    .topbar .container{
+
+        height:70px;
+
+    }
+
+    .logo span{
+
+        display:none;
+
+    }
+
+    .logo img{
+
+        width:40px;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+        line-height:1.2;
+
+    }
+
+    .section{
+
+        padding:55px 0;
+
+    }
+
+    .sectionTitle{
+
+        margin-bottom:40px;
+
+    }
+
+    .sectionTitle h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .featureIcon,
+    .securityIcon{
+
+        font-size:44px;
+
+    }
+
+    .step .material-symbols-rounded{
+
+        font-size:46px;
+
+    }
+
+    .cta{
+
+        padding:60px 0;
+
+    }
+
+    .cta h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .cta p{
+
+        font-size:.95rem;
+
+    }
+
+    .closeLightbox{
+
+        width:48px;
+
+        height:48px;
+
+        top:15px;
+
+        right:15px;
+
+    }
+
+    .lightbox{
+
+        padding:15px;
+
+    }
+
+}
+
+/* ==========================================================
+LANDSCAPE PHONES
+========================================================== */
+
+@media (max-height:600px) and (orientation:landscape){
+
+    .hero{
+
+        padding:40px 0;
+
+    }
+
+    .section{
+
+        padding:45px 0;
+
+    }
+
+}
+
+/* ==========================================================
+LARGE SCREENS
+========================================================== */
+
+@media (min-width:1600px){
+
+    .container{
+
+        max-width:1400px;
+
+    }
+
+    .hero h1{
+
+        font-size:4rem;
+
+    }
+
+}
+
+/* ==========================================================
+PRINT
+========================================================== */
+
+@media print{
+
+    header,
+    footer,
+    .heroButtons,
+    .lightbox,
+    .menuButton{
+
+        display:none !important;
+
+    }
+
+    body{
+
+        background:#FFFFFF;
+
+    }
+
+    .section{
+
+        padding:20px 0;
+
+    }
+
+    .featureCard,
+    .securityCard,
+    .step{
+
+        box-shadow:none;
+
+        border:1px solid #CCCCCC;
+
+    }
+
+}
