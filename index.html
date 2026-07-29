@@ -1,9 +1,263 @@
-<!DOCTYPE html><html lang='es'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>CFDI Verifier</title><link rel='stylesheet' href='css/styles.css'></head><body>
-<header><h1>CFDI Verifier</h1><nav><a href='privacy.html'>Privacidad</a><a href='terms.html'>Términos</a><a href='support.html'>Soporte</a></nav></header>
-<div class='container'>
-<div class='card'><h2>Administra todos tus CFDI desde una sola aplicación</h2><p>Consulta directamente con el SAT, organiza automáticamente tus XML por mes, renombra archivos y genera reportes en Excel.</p><a class='btn' href='privacy.html'>Política de privacidad</a></div>
-<div class='card'><h2>Funciones</h2><div class='grid'><div>📷 Consulta por QR</div><div>📄 Consulta XML</div><div>📁 Organización por mes</div><div>✏️ Renombrado</div><div>📊 Excel</div><div>🔒 Procesamiento local</div></div></div>
-<div class='card'><h2>Galería</h2><p>Coloca aquí las capturas de pantalla dentro de la carpeta <strong>images</strong> con los nombres screenshot1.jpg ... screenshot5.jpg.</p><div class='grid'>
-<img src='images/screenshot1.jpg' alt='1'><img src='images/screenshot2.jpg' alt='2'><img src='images/screenshot3.jpg' alt='3'><img src='images/screenshot4.jpg' alt='4'><img src='images/screenshot5.jpg' alt='5'>
-</div></div>
-</div><footer>© 2026 CIIS</footer><script src='js/main.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- ==========================================================
+         CFDI Verifier
+         CIIS
+         index.html
+         ========================================================== -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CFDI Verifier | Consulta, Organiza y Administra tus CFDI</title>
+
+    <meta
+        name="description"
+        content="Consulta CFDI directamente con el SAT, organiza automáticamente tus XML, genera reportes en Excel y administra toda tu información desde una sola aplicación.">
+
+    <meta
+        name="keywords"
+        content="CFDI, XML, SAT, Facturas, QR, Excel, Organizador XML">
+
+    <meta
+        name="author"
+        content="CIIS">
+
+    <meta
+        name="theme-color"
+        content="#1565C0">
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:title"
+        content="CFDI Verifier">
+
+    <meta
+        property="og:description"
+        content="Consulta, organiza y administra tus CFDI desde una sola aplicación.">
+
+    <meta
+        property="og:image"
+        content="assets/images/hero.png">
+
+    <meta
+        property="og:url"
+        content="https://ciis.github.io/cfdiverifier">
+
+    <link
+        rel="icon"
+        href="favicon.ico">
+
+    <link
+        rel="manifest"
+        href="manifest.webmanifest">
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Symbols -->
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+HEADER
+========================================================== -->
+
+<header class="topbar">
+
+    <div class="container">
+
+        <a
+            href="#"
+            class="logo">
+
+            <img
+                src="assets/images/logo.png"
+                alt="CFDI Verifier">
+
+            <span>
+
+                CFDI Verifier
+
+            </span>
+
+        </a>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="#inicio">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#funciones">
+                        Funciones
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#capturas">
+                        Capturas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#seguridad">
+                        Seguridad
+                    </a>
+                </li>
+
+                <li>
+                    <a href="privacy.html">
+                        Privacidad
+                    </a>
+                </li>
+
+                <li>
+                    <a href="terms.html">
+                        Términos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="support.html">
+                        Soporte
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <button
+            id="menuButton"
+            class="menuButton">
+
+            <span class="material-symbols-rounded">
+
+                menu
+
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ==========================================================
+HERO
+========================================================== -->
+
+<section
+    id="inicio"
+    class="hero">
+
+    <div class="container heroGrid">
+
+        <div class="heroContent">
+
+            <span class="tag">
+
+                CFDI 4.0
+
+            </span>
+
+            <h1>
+
+                Administra todos tus CFDI
+                desde una sola aplicación.
+
+            </h1>
+
+            <p>
+
+                Consulta la autenticidad de tus CFDI
+                directamente utilizando los servicios públicos
+                de validación del SAT.
+
+                Organiza automáticamente tus XML por mes,
+                renombra archivos,
+                genera reportes en Excel
+                y mantén tu información siempre ordenada.
+
+            </p>
+
+            <div class="heroButtons">
+
+                <a
+                    href="#funciones"
+                    class="primaryButton">
+
+                    Conocer funciones
+
+                </a>
+
+                <a
+                    href="privacy.html"
+                    class="secondaryButton">
+
+                    Política de privacidad
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="heroImage">
+
+            <img
+                src="assets/images/hero.png"
+                alt="Aplicación CFDI Verifier">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+FIN DE LA PARTE 1.1
+========================================================== -->
