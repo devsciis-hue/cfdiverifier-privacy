@@ -1,696 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-    <!-- ==========================================================
-         CFDI Verifier
-         CIIS
-         index.html
-         ========================================================== -->
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>CFDI Verifier | Consulta, Organiza y Administra tus CFDI</title>
-
-    <meta
-        name="description"
-        content="Consulta CFDI directamente con el SAT, organiza automáticamente tus XML, genera reportes en Excel y administra toda tu información desde una sola aplicación.">
-
-    <meta
-        name="keywords"
-        content="CFDI, XML, SAT, Facturas, QR, Excel, Organizador XML">
-
-    <meta
-        name="author"
-        content="CIIS">
-
-    <meta
-        name="theme-color"
-        content="#1565C0">
-
-    <meta
-        property="og:type"
-        content="website">
-
-    <meta
-        property="og:title"
-        content="CFDI Verifier">
-
-    <meta
-        property="og:description"
-        content="Consulta, organiza y administra tus CFDI desde una sola aplicación.">
-
-    <meta
-        property="og:image"
-        content="assets/images/hero.png">
-
-    <meta
-        property="og:url"
-        content="https://ciis.github.io/cfdiverifier">
-
-    <link
-        rel="icon"
-        href="favicon.ico">
-
-    <link
-        rel="manifest"
-        href="manifest.webmanifest">
-
-    <!-- Google Fonts -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Material Symbols -->
-
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
-
-    <!-- CSS -->
-
-    <link
-        rel="stylesheet"
-        href="css/styles.css">
-
-    <link
-        rel="stylesheet"
-        href="css/responsive.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CFDI Verifier | Valida, organiza y exporta CFDI</title>
+  <meta name="description" content="CFDI Verifier consulta CFDI directamente con servicios públicos del SAT, lee QR, organiza XML por mes, renombra archivos y exporta reportes a Microsoft Excel.">
+  <meta name="keywords" content="CFDI Verifier, CFDI, SAT, XML, QR, Excel, organizar XML, validar CFDI">
+  <meta name="author" content="CIIS">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ciis.github.io/cfdiverifier/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CFDI Verifier">
+  <meta property="og:description" content="Valida CFDI, organiza XML y genera reportes en Excel desde una aplicación local.">
+  <meta property="og:image" content="https://ciis.github.io/cfdiverifier/assets/images/hero.webp">
+  <meta property="og:url" content="https://ciis.github.io/cfdiverifier/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f62fe">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/logo.webp">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" as="image" href="assets/images/hero.webp">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CFDI Verifier",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "creator": {"@type": "Organization", "name": "CIIS"},
+      "description": "Aplicación para validar CFDI, leer códigos QR, consultar XML, organizar archivos por mes, renombrar XML y exportar reportes a Microsoft Excel.",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "MXN"}
+    }
+  </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<!-- ==========================================================
-HEADER
-========================================================== -->
+  <header class="topbar" data-page="inicio">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="CFDI Verifier, inicio">
+        <img src="assets/images/logo.webp" width="96" height="64" alt="" decoding="async">
+        <span>CFDI Verifier</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#capturas">Capturas</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="terms.html">Términos</a>
+        <a href="support.html">Soporte</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="topbar">
+  <main id="contenido">
+    <section id="inicio" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">CFDI 4.0 · Procesamiento local · Sin cuentas</p>
+          <h1>Valida CFDI, organiza XML y genera Excel con una sola aplicación.</h1>
+          <p>CFDI Verifier consulta la autenticidad de tus CFDI directamente utilizando servicios públicos del SAT. También lee códigos QR, consulta archivos XML, realiza consultas por lote, organiza XML por mes, renombra archivos y exporta reportes de Microsoft Excel.</p>
+          <div class="button-row" aria-label="Acciones principales">
+            <a class="button button--primary" href="#funciones">Conocer funciones</a>
+            <a class="button button--secondary" href="privacy.html">Ver privacidad</a>
+          </div>
+          <ul class="trust-list" aria-label="Puntos clave">
+            <li><span class="material-symbols-rounded" aria-hidden="true">verified</span> Consulta directa al SAT</li>
+            <li><span class="material-symbols-rounded" aria-hidden="true">folder_managed</span> XML bajo tu control</li>
+            <li><span class="material-symbols-rounded" aria-hidden="true">table_chart</span> Exportación a Excel</li>
+          </ul>
+        </div>
+        <figure class="hero__media">
+          <img src="assets/images/hero.webp" width="1280" height="853" alt="Pantalla de la aplicación CFDI Verifier" decoding="async">
+        </figure>
+      </div>
+    </section>
 
-    <div class="container">
+    <section id="funciones" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Funciones</p>
+          <h2>Herramientas para administrar CFDI con orden y rapidez.</h2>
+          <p>La aplicación conserva la información aprobada y concentra las tareas habituales de consulta y administración fiscal en un flujo local.</p>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">qr_code_scanner</span>
+            <h3>Lectura de QR</h3>
+            <p>Lee códigos QR contenidos en comprobantes CFDI para iniciar consultas de forma sencilla.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">fact_check</span>
+            <h3>Validación de CFDI</h3>
+            <p>Consulta el estado de los comprobantes mediante servicios públicos disponibles del SAT.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">data_object</span>
+            <h3>Consulta de XML</h3>
+            <p>Permite seleccionar archivos XML almacenados en el dispositivo para revisar su información fiscal.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">playlist_add_check</span>
+            <h3>Consulta por lote</h3>
+            <p>Realiza consultas por lote para administrar varios comprobantes con menos trabajo manual.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">calendar_month</span>
+            <h3>Organización por mes</h3>
+            <p>Organiza archivos XML por mes de emisión cuando el usuario solicita esa acción.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">drive_file_rename_outline</span>
+            <h3>Renombrado de XML</h3>
+            <p>Renombra archivos XML dentro del almacenamiento del dispositivo para mantenerlos identificables.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">grid_on</span>
+            <h3>Exportación a Excel</h3>
+            <p>Genera reportes en formato Microsoft Excel con la información obtenida de los XML procesados.</p>
+          </article>
+          <article class="feature-card">
+            <span class="material-symbols-rounded" aria-hidden="true">settings_suggest</span>
+            <h3>Configuración local</h3>
+            <p>Almacena solamente configuración local, la última consulta y datos necesarios para el funcionamiento normal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <a
-            href="#"
-            class="logo">
+    <section id="capturas" class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Capturas</p>
+          <h2>Interfaz real de CFDI Verifier.</h2>
+          <p>La galería utiliza únicamente capturas reales incluidas en el proyecto.</p>
+        </div>
+        <div class="gallery-grid" aria-label="Galería de capturas">
+          <button class="gallery-item" type="button" data-gallery-src="assets/images/hero.webp" data-gallery-alt="Pantalla principal de CFDI Verifier">
+            <img src="assets/images/hero.webp" width="1280" height="853" alt="Pantalla principal de CFDI Verifier" loading="lazy" decoding="async">
+          </button>
+        </div>
+      </div>
+    </section>
 
-            <img
-                src="assets/images/logo.png"
-                alt="CFDI Verifier">
+    <section id="seguridad" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Seguridad y privacidad</p>
+          <h2>Tu información permanece bajo tu control.</h2>
+          <p>CFDI Verifier minimiza el tratamiento de información y prioriza el procesamiento local de los archivos seleccionados por el usuario.</p>
+        </div>
+        <div class="security-grid">
+          <article class="info-card">
+            <span class="material-symbols-rounded" aria-hidden="true">cloud_off</span>
+            <h3>Sin servidores de CIIS</h3>
+            <p>No usa servidores de CIIS y no sube archivos XML a infraestructura administrada por CIIS.</p>
+          </article>
+          <article class="info-card">
+            <span class="material-symbols-rounded" aria-hidden="true">person_off</span>
+            <h3>Sin cuentas</h3>
+            <p>No requiere login, no solicita cuentas de usuario y no recopila información personal.</p>
+          </article>
+          <article class="info-card">
+            <span class="material-symbols-rounded" aria-hidden="true">campaign</span>
+            <h3>Sin publicidad</h3>
+            <p>No muestra anuncios publicitarios, no vende información y no comparte información con terceros.</p>
+          </article>
+          <article class="info-card">
+            <span class="material-symbols-rounded" aria-hidden="true">account_balance</span>
+            <h3>Independiente del SAT</h3>
+            <p>No está afiliada, patrocinada, autorizada ni representa al Servicio de Administración Tributaria.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <span>
+    <section id="faq" class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Preguntas frecuentes.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Necesito crear una cuenta?</summary>
+            <p>No. La aplicación funciona sin crear cuentas, sin registro y sin inicio de sesión.</p>
+          </details>
+          <details>
+            <summary>¿Mis XML se almacenan en servidores de CIIS?</summary>
+            <p>No. Los archivos permanecen en el dispositivo del usuario y no son enviados a servidores administrados por CIIS.</p>
+          </details>
+          <details>
+            <summary>¿La aplicación representa al SAT?</summary>
+            <p>No. CFDI Verifier no está afiliada con el SAT. Las consultas se realizan directamente contra servicios públicos del SAT.</p>
+          </details>
+          <details>
+            <summary>¿La aplicación contiene publicidad?</summary>
+            <p>No. CFDI Verifier no muestra anuncios publicitarios.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-                CFDI Verifier
+    <section class="cta-section">
+      <div class="container cta-section__inner">
+        <div>
+          <p class="eyebrow">Soporte</p>
+          <h2>Mantén organizados tus CFDI de forma sencilla.</h2>
+          <p>Consulta, organiza, renombra y genera reportes desde una aplicación desarrollada por CIIS.</p>
+        </div>
+        <a class="button button--light" href="support.html">Contactar soporte</a>
+      </div>
+    </section>
+  </main>
 
-            </span>
-
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand--footer" href="index.html" aria-label="CFDI Verifier, inicio">
+          <img src="assets/images/logo.webp" width="96" height="64" alt="" loading="lazy" decoding="async">
+          <span>CFDI Verifier</span>
         </a>
-
-        <nav>
-
-            <ul>
-
-                <li>
-                    <a href="#inicio">
-                        Inicio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#funciones">
-                        Funciones
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#capturas">
-                        Capturas
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#seguridad">
-                        Seguridad
-                    </a>
-                </li>
-
-                <li>
-                    <a href="privacy.html">
-                        Privacidad
-                    </a>
-                </li>
-
-                <li>
-                    <a href="terms.html">
-                        Términos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="support.html">
-                        Soporte
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <button
-            id="menuButton"
-            class="menuButton">
-
-            <span class="material-symbols-rounded">
-
-                menu
-
-            </span>
-
-        </button>
-
+        <p>Aplicación desarrollada por CIIS para facilitar la administración de comprobantes fiscales.</p>
+      </div>
+      <nav aria-label="Navegación del pie de página">
+        <h2>Navegación</h2>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#funciones">Funciones</a>
+        <a href="index.html#capturas">Capturas</a>
+        <a href="index.html#seguridad">Seguridad</a>
+      </nav>
+      <nav aria-label="Información legal">
+        <h2>Información</h2>
+        <a href="privacy.html">Política de privacidad</a>
+        <a href="terms.html">Términos de uso</a>
+        <a href="support.html">Soporte</a>
+      </nav>
+      <div>
+        <h2>Contacto</h2>
+        <p><a href="mailto:devs.ciis@gmail.com">devs.ciis@gmail.com</a></p>
+        <p>© <span data-year></span> CIIS. Todos los derechos reservados.</p>
+      </div>
     </div>
-
-</header>
-
-<!-- ==========================================================
-HERO
-========================================================== -->
-
-<section
-    id="inicio"
-    class="hero">
-
-    <div class="container heroGrid">
-
-        <div class="heroContent">
-
-            <span class="tag">
-
-                CFDI 4.0
-
-            </span>
-
-            <h1>
-
-                Administra todos tus CFDI
-                desde una sola aplicación.
-
-            </h1>
-
-            <p>
-
-                Consulta la autenticidad de tus CFDI
-                directamente utilizando los servicios públicos
-                de validación del SAT.
-
-                Organiza automáticamente tus XML por mes,
-                renombra archivos,
-                genera reportes en Excel
-                y mantén tu información siempre ordenada.
-
-            </p>
-
-            <div class="heroButtons">
-
-                <a
-                    href="#funciones"
-                    class="primaryButton">
-
-                    Conocer funciones
-
-                </a>
-
-                <a
-                    href="privacy.html"
-                    class="secondaryButton">
-
-                    Política de privacidad
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="heroImage">
-
-            <img
-                src="assets/images/hero.png"
-                alt="Aplicación CFDI Verifier">
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ==========================================================
-SEGURIDAD
-========================================================== -->
-
-<section
-    id="seguridad"
-    class="section alternate">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <span class="sectionTag">
-
-                Seguridad
-
-            </span>
-
-            <h2>
-
-                Tu información permanece bajo tu control
-
-            </h2>
-
-            <p>
-
-                CFDI Verifier fue diseñado para minimizar el tratamiento de
-                información y priorizar el procesamiento local de los archivos
-                seleccionados por el usuario.
-
-            </p>
-
-        </div>
-
-        <div class="securityGrid">
-
-            <article class="securityCard">
-
-                <span class="material-symbols-rounded securityIcon">
-
-                    shield
-
-                </span>
-
-                <h3>
-
-                    Procesamiento local
-
-                </h3>
-
-                <p>
-
-                    Los XML son procesados directamente en tu dispositivo.
-                    No son enviados a servidores administrados por CIIS.
-
-                </p>
-
-            </article>
-
-            <article class="securityCard">
-
-                <span class="material-symbols-rounded securityIcon">
-
-                    cloud_sync
-
-                </span>
-
-                <h3>
-
-                    Consulta directa
-
-                </h3>
-
-                <p>
-
-                    Las validación se realizan utilizando los servicios
-                    públicos disponibles para consulta de comprobantes.
-
-                </p>
-
-            </article>
-
-            <article class="securityCard">
-
-                <span class="material-symbols-rounded securityIcon">
-
-                    folder_managed
-
-                </span>
-
-                <h3>
-
-                    Organización segura
-
-                </h3>
-
-                <p>
-
-                    La organización y renombrado de archivos solamente se
-                    realiza cuando el usuario lo solicita.
-
-                </p>
-
-            </article>
-
-            <article class="securityCard">
-
-                <span class="material-symbols-rounded securityIcon">
-
-                    lock
-
-                </span>
-
-                <h3>
-
-                    Sin cuentas
-
-                </h3>
-
-                <p>
-
-                    La aplicación no requiere registro,
-                    usuario,
-                    contraseña
-                    ni autenticación.
-
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ==========================================================
-PREGUNTAS FRECUENTES
-========================================================== -->
-
-<section
-    class="section">
-
-    <div class="container">
-
-        <div class="sectionTitle">
-
-            <span class="sectionTag">
-
-                FAQ
-
-            </span>
-
-            <h2>
-
-                Preguntas frecuentes
-
-            </h2>
-
-        </div>
-
-        <div class="faq">
-
-            <details>
-
-                <summary>
-
-                    ¿Necesito crear una cuenta?
-
-                </summary>
-
-                <p>
-
-                    No.
-                    La aplicación funciona sin crear cuentas.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-
-                    ¿Necesito e.firma?
-
-                </summary>
-
-                <p>
-
-                    No.
-                    La consulta se realiza utilizando la información del CFDI.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-
-                    ¿Mis XML se almacenan en servidores de CIIS?
-
-                </summary>
-
-                <p>
-
-                    No.
-                    Los archivos permanecen en el dispositivo del usuario.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-
-                    ¿La aplicación contiene publicidad?
-
-                </summary>
-
-                <p>
-
-                    No.
-
-                </p>
-
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ==========================================================
-CALL TO ACTION
-========================================================== -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <h2>
-
-            Mantén organizados tus CFDI
-            de forma sencilla.
-
-        </h2>
-
-        <p>
-
-            Consulta,
-            organiza,
-            renombra
-            y genera reportes
-            desde una sola aplicación.
-
-        </p>
-
-        <a
-            href="support.html"
-            class="primaryButton">
-
-            Contactar soporte
-
-        </a>
-
-    </div>
-
-</section>
-
-<!-- ==========================================================
-LIGHTBOX
-========================================================== -->
-
-<div
-    id="lightbox"
-    class="lightbox">
-
-    <button
-        id="closeLightbox"
-        class="closeLightbox">
-
-        <span class="material-symbols-rounded">
-
-            close
-
-        </span>
-
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de capturas" hidden>
+    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Cerrar galería">
+      <span class="material-symbols-rounded" aria-hidden="true">close</span>
     </button>
-
-    <img
-        id="lightboxImage"
-        src=""
-        alt="Captura">
-
-</div>
-
-   
-
-<!-- ==========================================================
-FOOTER
-========================================================== -->
-
-<footer>
-
-    <div class="container footerGrid">
-
-        <div>
-
-            <img
-                src="assets/images/logo.png"
-                alt="CIIS"
-                class="footerLogo">
-
-            <p>
-
-                CFDI Verifier es una aplicación desarrollada por CIIS para
-                facilitar la administración de comprobantes fiscales.
-
-            </p>
-
-        </div>
-
-        <div>
-
-            <h4>
-
-                Navegación
-
-            </h4>
-
-            <ul>
-
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#funciones">Funciones</a></li>
-                <li><a href="#capturas">Capturas</a></li>
-                <li><a href="#seguridad">Seguridad</a></li>
-
-            </ul>
-
-        </div>
-
-        <div>
-
-            <h4>
-
-                Información
-
-            </h4>
-
-            <ul>
-
-                <li><a href="privacy.html">Política de privacidad</a></li>
-                <li><a href="terms.html">Términos de uso</a></li>
-                <li><a href="support.html">Soporte</a></li>
-
-            </ul>
-
-        </div>
-
-        <div>
-
-            <h4>
-
-                Contacto
-
-            </h4>
-
-            <p>
-
-                devs.ciis@gmail.com
-
-            </p>
-
-            <p>
-
-                © 2026 CIIS
-
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-<!-- ==========================================================
-LIGHTBOX
-========================================================== -->
-
-<div
-    id="lightbox"
-    class="lightbox">
-
-    <button
-        id="closeLightbox"
-        class="closeLightbox">
-
-        <span class="material-symbols-rounded">
-
-            close
-
-        </span>
-
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Captura anterior">
+      <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
     </button>
+    <img id="lightbox-image" src="assets/images/hero.webp" alt="">
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Captura siguiente">
+      <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
+    </button>
+    <p class="lightbox__counter" data-lightbox-counter></p>
+  </div>
 
-    <img
-        id="lightboxImage"
-        src=""
-        alt="Captura de la aplicación">
-
-</div>
-
-<!-- ==========================================================
-SCRIPTS
-========================================================== -->
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/gallery.js"></script>
-
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
 </body>
-
-</html>
-<!-- ==========================================================
-SCRIPTS
-========================================================== -->
-
-<script src="js/main.js"></script>
-<script src="js/gallery.js"></script>
-
-</body>
-
 </html>

@@ -1,409 +1,86 @@
-/* ==========================================================
-   CFDI Verifier
-   main.js
-   CIIS
-========================================================== */
+(() => {
+  "use strict";
 
-"use strict";
+  const topbar = document.querySelector(".topbar");
+  const menuButton = document.querySelector(".menu-button");
+  const nav = document.querySelector(".site-nav");
+  const yearTargets = document.querySelectorAll("[data-year]");
 
-/* ==========================================================
-ELEMENTOS
-========================================================== */
+  const setMenuState = (isOpen) => {
+    if (!menuButton || !nav) return;
 
-const header =
-    document.querySelector(".topbar");
+    document.body.classList.toggle("nav-open", isOpen);
+    nav.classList.toggle("is-open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+  };
 
-const menuButton =
-    document.getElementById("menuButton");
+  const updateHeader = () => {
+    if (!topbar) return;
+    topbar.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
 
-const navigation =
-    document.querySelector("nav");
-
-const navLinks =
-    document.querySelectorAll("nav a");
-
-/* ==========================================================
-MENU MOVIL
-========================================================== */
-
-if(menuButton){
-
-    menuButton.addEventListener("click",()=>{
-
-        navigation.classList.toggle("showMenu");
-
-        menuButton.classList.toggle("active");
-
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", () => {
+      setMenuState(!nav.classList.contains("is-open"));
     });
 
-}
-
-navLinks.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        navigation.classList.remove("showMenu");
-
-        menuButton.classList.remove("active");
-
+    nav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        setMenuState(false);
+      }
     });
 
-});
-
-/* ==========================================================
-HEADER SCROLL
-========================================================== */
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>30){
-
-        header.classList.add("scrolled");
-
-    }else{
-
-        header.classList.remove("scrolled");
-
-    }
-
-});
-
-/* ==========================================================
-SCROLL REVEAL
-========================================================== */
-
-const revealElements=document.querySelectorAll(
-
-    ".featureCard,"+
-    ".securityCard,"+
-    ".step,"+
-    ".galleryItem,"+
-    ".faq details"
-
-);
-
-const revealObserver=new IntersectionObserver(
-
-(entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("visible");
-
-        }
-
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenuState(false);
+      }
     });
 
-},
-
-{
-
-    threshold:.20
-
-}
-
-);
-
-revealElements.forEach(item=>{
-
-    item.classList.add("hiddenReveal");
-
-    revealObserver.observe(item);
-
-});
-
-/* ==========================================================
-SMOOTH SCROLL
-========================================================== */
-
-document
-
-.querySelectorAll('a[href^="#"]')
-
-.forEach(anchor=>{
-
-    anchor.addEventListener(
-
-        "click",
-
-        function(e){
-
-            const target=document.querySelector(
-
-                this.getAttribute("href")
-
-            );
-
-            if(target){
-
-                e.preventDefault();
-
-                target.scrollIntoView({
-
-                    behavior:"smooth",
-
-                    block:"start"
-
-                });
-
-            }
-
-        }
-
-    );
-
-});
-
-/* ==========================================================
-BOTON VOLVER ARRIBA
-========================================================== */
-
-const topButton=document.createElement("button");
-
-topButton.innerHTML="↑";
-
-topButton.id="backTop";
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>500){
-
-        topButton.classList.add("show");
-
-    }else{
-
-        topButton.classList.remove("show");
-
-    }
-
-});
-
-topButton.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 901px)").matches) {
+        setMenuState(false);
+      }
     });
+  }
 
-});
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
 
-/* ==========================================================
-AÑO FOOTER
-========================================================== */
+      const target = document.querySelector(href);
+      if (!target) return;
 
-const yearElement=document.getElementById("year");
-
-if(yearElement){
-
-    yearElement.textContent=
-
-        new Date().getFullYear();
-
-}
-
-/* ==========================================================
-EFECTO HERO
-========================================================== */
-
-const hero=document.querySelector(".heroImage img");
-
-if(hero){
-
-    window.addEventListener("mousemove",(e)=>{
-
-        const x=
-
-            (window.innerWidth/2-e.clientX)/80;
-
-        const y=
-
-            (window.innerHeight/2-e.clientY)/80;
-
-        hero.style.transform=
-
-            `rotateY(${x}deg) rotateX(${-y}deg)`;
-
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", href);
     });
-
-}
-
-/* ==========================================================
-LAZY LOAD
-========================================================== */
-
-const lazyImages=
-
-document.querySelectorAll("img");
-
-const lazyObserver=
-
-new IntersectionObserver(
-
-(entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            const img=entry.target;
-
-            img.classList.add("loaded");
-
-            lazyObserver.unobserve(img);
-
-        }
-
-    });
-
-}
-
-);
-
-lazyImages.forEach(img=>{
-
-    lazyObserver.observe(img);
-
-});
-
-/* ==========================================================
-RIPPLE BUTTON
-========================================================== */
-
-document
-
-.querySelectorAll(
-
-".primaryButton,.secondaryButton"
-
-)
-
-.forEach(button=>{
-
-    button.addEventListener(
-
-        "click",
-
-        function(e){
-
-            const circle=
-
-                document.createElement("span");
-
-            const d=Math.max(
-
-                this.clientWidth,
-
-                this.clientHeight
-
-            );
-
-            circle.style.width=d+"px";
-
-            circle.style.height=d+"px";
-
-            circle.classList.add("ripple");
-
-            circle.style.left=
-
-                e.offsetX-d/2+"px";
-
-            circle.style.top=
-
-                e.offsetY-d/2+"px";
-
-            this.appendChild(circle);
-
-            setTimeout(()=>{
-
-                circle.remove();
-
-            },600);
-
-        }
-
-    );
-
-});
-
-/* ==========================================================
-TOOLTIPS
-========================================================== */
-
-document
-
-.querySelectorAll("[data-tooltip]")
-
-.forEach(element=>{
-
-    element.addEventListener("mouseenter",()=>{
-
-        const tooltip=
-
-            document.createElement("div");
-
-        tooltip.className="tooltip";
-
-        tooltip.innerHTML=
-
-            element.dataset.tooltip;
-
-        document.body.appendChild(tooltip);
-
-        const rect=
-
-            element.getBoundingClientRect();
-
-        tooltip.style.left=
-
-            rect.left+
-
-            rect.width/2-
-
-            tooltip.offsetWidth/2+"px";
-
-        tooltip.style.top=
-
-            rect.top-40+"px";
-
-        element.tooltip=tooltip;
-
-    });
-
-    element.addEventListener("mouseleave",()=>{
-
-        if(element.tooltip){
-
-            element.tooltip.remove();
-
-        }
-
-    });
-
-});
-
-/* ==========================================================
-INICIALIZACION
-========================================================== */
-
-window.addEventListener(
-
-"load",
-
-()=>{
-
-    document.body.classList.add("loaded");
-
-}
-
-);
-
-/* ==========================================================
-FIN
-========================================================== */
+  });
+
+  yearTargets.forEach((target) => {
+    target.textContent = new Date().getFullYear();
+  });
+
+  const backTop = document.createElement("button");
+  backTop.className = "back-top";
+  backTop.type = "button";
+  backTop.setAttribute("aria-label", "Volver arriba");
+  backTop.innerHTML = '<span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>';
+  document.body.append(backTop);
+
+  backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  const updateBackTop = () => {
+    backTop.classList.toggle("is-visible", window.scrollY > 560);
+  };
+
+  updateHeader();
+  updateBackTop();
+  window.addEventListener("scroll", () => {
+    updateHeader();
+    updateBackTop();
+  }, { passive: true });
+})();

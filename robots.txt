@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ciis.github.io/cfdiverifier/sitemap.xml

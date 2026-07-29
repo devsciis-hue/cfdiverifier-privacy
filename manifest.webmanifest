@@ -1,0 +1,19 @@
+{
+  "name": "CFDI Verifier",
+  "short_name": "CFDI Verifier",
+  "description": "Valida CFDI, lee QR, consulta XML, organiza archivos por mes y exporta reportes a Microsoft Excel.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f62fe",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "assets/images/logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}
